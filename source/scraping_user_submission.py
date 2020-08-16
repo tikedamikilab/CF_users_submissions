@@ -20,8 +20,7 @@ def makeUserSubmissionsCsv():
 
         data = pd.read_html(URL, header = 0)
         print(data)
-        data[5].to_csv("./users_submissions/test.csv", header=False, index=False, mode='a')
+        data[5].to_csv('./users_submissions/'+ userName +'.csv', header=False, index=False, mode='a')
 
 if __name__ == "__main__":
     makeUserSubmissionsCsv()
-    
