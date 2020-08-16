@@ -11,8 +11,9 @@ if __name__ == "__main__":
     userName = 'tourist'
     start = 1
     end = 48
-    Process(
-        scraping_URL_user_submissons_problem.makeCSVSubmissonsProblemURL(userName, start, end),
-        scraping_user_submission.makeCSVUserSubmissions(userName, start, end)
-    )
-    
+    p1 = Process(target = scraping_URL_user_submissons_problem.makeCSVSubmissonsProblemURL, args=(userName, start, end))
+    p2 = Process(target = scraping_user_submission.makeCSVUserSubmissions, args=(userName, start, end))
+    p1.start()
+    p2.start()
+    p1.join()
+    p2.join()
