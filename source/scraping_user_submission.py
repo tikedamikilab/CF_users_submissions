@@ -1,6 +1,6 @@
 # scraping_user_submission
 # CFからあるユーザのsubmissionsを取得 -> csvへ
-#
+# users_submissiomsに格納
 
 import pandas as pd
 from datetime import datetime as dt
