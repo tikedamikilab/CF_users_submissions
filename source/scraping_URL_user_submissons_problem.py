@@ -22,7 +22,7 @@ driver = webdriver.Chrome('C:\Program Files\Chrome Driver\chromedriver',options=
 # userName = 'tourist'
 # start = 1
 # end = 48
-def makeSubmissonsProblemURL(userName, start, end):
+def makeCSVSubmissonsProblemURL(userName, start, end):
     baseURL = 'https://codeforces.com/submissions/'    
 
     for i in range(start , end + 1):
@@ -38,4 +38,4 @@ def makeSubmissonsProblemURL(userName, start, end):
         pd.DataFrame(ProblemURL).to_csv('./users_submissions/' + userName + '_submissons.csv', mode='a',index=None, header=None)
 
 if __name__ == "__main__":
-    makeSubmissonsProblemURL('tourist', 1, 48)
+    makeCSVSubmissonsProblemURL('tourist', 1, 48)

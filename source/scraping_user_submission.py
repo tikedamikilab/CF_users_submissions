@@ -7,7 +7,7 @@ import pandas as pd
 # userName = 'tourist'
 # start = 1
 # end = 48
-def makeUserSubmissionsCsv(userName, start, end):
+def makeCSVUserSubmissions(userName, start, end):
     
     baseURL = 'https://codeforces.com/submissions/'
     
@@ -19,4 +19,4 @@ def makeUserSubmissionsCsv(userName, start, end):
         data[5].to_csv('./users_submissions/'+ userName +'.csv', header=False, index=False, mode='a')
 
 if __name__ == "__main__":
-    makeUserSubmissionsCsv('tourist', 1, 48)
+    makeCSVUserSubmissions('tourist', 1, 48)
