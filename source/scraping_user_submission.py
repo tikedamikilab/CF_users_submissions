@@ -3,15 +3,11 @@
 # users_submissiomsに格納
 
 import pandas as pd
-from datetime import datetime as dt
-import time
-from urllib import request  # urllib.requestモジュールをインポート
-from bs4 import BeautifulSoup  # BeautifulSoupクラスをインポート
 
 def makeUserSubmissionsCsv():
-    userName = 'tourist'
+    userName = 'Benq'
     start = 1
-    end = 48
+    end = 114
     
     baseURL = 'https://codeforces.com/submissions/'
     
