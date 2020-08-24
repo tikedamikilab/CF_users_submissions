@@ -41,9 +41,12 @@ def makeCSVRatedUserNameList():
         soup = BeautifulSoup(driver.page_source, features="html.parser")
             
         submissionMAX = [n.get_text() for n in soup.select('div ul li span')][-1]
-        output =[name, int(submissionMAX)]
-        print(output)
-        outputList.append(output)
+        try:
+            output =[name, int(submissionMAX)]
+            print(output)
+            outputList.append(output)
+        except ValueError as e:
+            print('catch KeyError:', e)
     print(outputList)
 
 if __name__ == "__main__":
