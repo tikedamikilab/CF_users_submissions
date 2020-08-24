@@ -23,7 +23,7 @@ options.add_argument('--headless')
 driver = webdriver.Chrome('C:\Program Files\Chrome Driver\chromedriver',options=options)
 
 def makeCSVRatedUserNameList():
-    page = 2
+    page = 4
     baseURL = 'https://codeforces.com/ratings/page/'
     URL = baseURL + str(page)
     print(URL)
