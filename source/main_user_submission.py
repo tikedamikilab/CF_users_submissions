@@ -8,9 +8,9 @@ if __name__ == "__main__":
     # userName = 'Um_nik'
     # start = 1
     # end = 108
-    userName = 'tourist'
+    userName = 'SerVasilich'
     start = 1
-    end = 48
+    end = 29
     p1 = Process(target = scraping_URL_user_submissons_problem.makeCSVSubmissonsProblemURL, args=(userName, start, end))
     p2 = Process(target = scraping_user_submission.makeCSVUserSubmissions, args=(userName, start, end))
     p1.start()
