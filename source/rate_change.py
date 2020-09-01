@@ -4,8 +4,7 @@ import pandas as pd
 import csv
 import json
 
-def userSubmissionUnique():
-    userName = 'tourist'
+def userSubmissionUnique(userName):
     baseDir = 'users_rate_change/'
     target = baseDir + userName + '_submissons.csv'
     data = pd.read_csv(target, header=None)
@@ -21,12 +20,18 @@ def userSubmissionUnique():
 
     maxlen = len(rate_change['result']) - 1
 
+    output = []
     with open('./users_rate_change/' + userName + '_unique.csv', 'a', newline='') as f:
         for solved in solvedList:
-            if int(solved.split('/')[2]) < int(rate_change['result'][maxlen]['contestId']):
+            if int(solved.split('/')[2]) == int(rate_change['result'][maxlen]['contestId']):
                 maxlen = maxlen - 1
-            writer = csv.writer(f)
-            writer.writerow([solved.split('/')[2], solved.split('/')[4], rate_change['result'][maxlen]['newRating']])
-
+            # ここからコンテスト以外の問題抽出
+            if int(solved.split('/')[2]) != int(rate_change['result'][maxlen]['contestId']):
+                if solved.split('/')[4] == 'A':
+                    if int(solved.split('/')[2]) not in output:
+                        output.append(int(solved.split('/')[2]))
+            # writer = csv.writer(f)
+            # writer.writerow([solved.split('/')[2], solved.split('/')[4], rate_change['result'][maxlen]['newRating']])
+    print(output[::-1])
 if __name__ == "__main__":
-    userSubmissionUnique()
+    userSubmissionUnique('BinZhao')
