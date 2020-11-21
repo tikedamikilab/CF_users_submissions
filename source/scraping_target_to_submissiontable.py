@@ -15,7 +15,7 @@
 #      ここからURLの生成を行う
 # 
 # 出力データ形式
-#      指定フォルダにユーザ名ごとのcsvファイルが作成される
+#      指定フォルダにターゲットごとのcsvファイルが作成される
 #            './users_submissions/'+ name +'.csv'
 #            './' + outputFolder + '/'+ name +'.csv'
 #      csvに以下の形式で追記される
@@ -42,12 +42,19 @@ def makeCSVTargetURL2SubmissionTable(name, targetURL, end, outputFolder,dataNum=
             data[dataNum].to_csv('./' + outputFolder + '/'+ name +'.csv', header=False, index=False, mode='a')
 
 if __name__ == "__main__":
+    targetlist = [
+        [1, 3131],[2, 313],[3, 279],[4, 4522],[5, 139],[6, 278],[7, 110],[8, 83],[9, 478],[10, 81],[11, 147],[12, 147],[13, 106],[14, 139],[15, 52],[16, 173],[17, 167],[18, 82],[19, 43],[20, 86],[21, 28],[22, 217],[23, 79],[24, 70],[25, 801],[26, 287],[27, 224]
+        ,[28, 14],[29, 99],[30, 51],[31, 118],[32, 123],[33, 87],[34, 256],[35, 92],[36, 49],[37, 316],[38, 264],[39, 11],[40, 46],[41, 1125],[42, 45],[43, 420],[44, 82],[45, 65],[46, 115],[47, 189],[48, 73],[49, 167],[50, 1947],[51, 30]
+        ,[52, 90],[53, 70],[54, 33],[55, 55],[56, 110],[57, 49],[58, 1260],[59, 1169],[60, 51],[61, 876],[62, 61],[63, 162],[64, 11],[65, 35],[66, 106],[67, 34],[68, 82],[69, 1347],[70, 57],[71, 2986],[72, 3]
+        ,[73, 23],[74, 71],[75, 274],[76, 23],[77, 33],[78, 128],[79, 62],[80, 386],[81, 120],[82, 478],[83, 91],[84, 208],[85, 30],[86, 19],[87, 75],[88, 60],[89, 31],[90, 67],[91, 64],[92, 243],[93, 42],[94, 143],[95, 32],[96, 1514],[97, 4],[98, 24],[99, 89]
+    ]
 
-    problemID = 1
-    end = 1
-    problemABCDEF = 'A'
-    baseURL = "https://codeforces.com/problemset/status/"
-    targetProblemURL = baseURL + str(problemID) + "/problem/" + problemABCDEF
-    print(targetProblemURL)
+    
+    for target in targetlist:
+        problemID = target[0]
+        end = target[1]
+        problemABCDEF = 'A'
+        baseURL = "https://codeforces.com/problemset/status/"
+        targetProblemURL = baseURL + str(problemID) + "/problem/" + problemABCDEF
 
-    makeCSVTargetURL2SubmissionTable('problem_' + str(problemID) +'_A' ,targetProblemURL, end, "problem_submissions")
+        makeCSVTargetURL2SubmissionTable('problem_' + str(problemID) +'_A' ,targetProblemURL, end, "problem_submissions")
