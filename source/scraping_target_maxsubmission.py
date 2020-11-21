@@ -1,8 +1,19 @@
 # 最大ページ数を取得 
 #      問題やユーザ名ごとに最大数のページ数を取得
 #      メインの入力データ用データを生成する
+# 入力データ
+#      対象を指定する名前（他のプログラムで入力として使用する可能性あり）
+#      スクレイピング対象のURL
+#      動作確認済み : https://codeforces.com/problemset/status/1/problem/A
+#                    https://codeforces.com/submissions/ユーザID
 # 出力データ形式
 #　　　[[target, maxpage]]
+#     
+#      問題1から100までのsubmissionページ数.md にあるようなデータがとれる
+#   
+# 対象のURLによっては下記
+#          submissionMAX = [n.get_text() for n in soup.select('div ul li span')][-1]
+# を書き換える必要性があるかも
 # 
 
 from time import sleep
