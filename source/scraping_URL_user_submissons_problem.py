@@ -4,6 +4,9 @@
 # end= スクレイピングの終わりのページ．その人個人のページからMAXのページ番号を取得
 # ユーザページ例
 # https://codeforces.com/submissions/tourist
+# 
+# 注意：フォルダは生成されない
+# 注意：csvは上書き
 
 from time import sleep
 from bs4 import BeautifulSoup  # BeautifulSoupクラスをインポート
