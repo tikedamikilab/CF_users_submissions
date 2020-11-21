@@ -1,1 +1,3 @@
 # CF_users_submissions
+
+_2_users_submissionsにレート上位600人のsubmissionが入っている

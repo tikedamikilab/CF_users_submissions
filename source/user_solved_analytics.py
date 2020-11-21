@@ -1,5 +1,13 @@
 # source\scraping_user_solved_list.py
 # 解答した問題数を記録
+# 初期の分析において使用
+#
+# 入力データ
+#       users : source\scraping_rated_username.pyで作成（source\scraping_user_submission.pyにコメントアウトで残ってる）
+#       target csv : source\scraping_user_submission.py で作成
+# 出力データ
+#       ユーザ名，CF開始日時，submission数，正答問題数，submissionを行た日数
+
 
 import pandas as pd
 import csv
