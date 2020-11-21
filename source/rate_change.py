@@ -1,10 +1,39 @@
 # 解答した問題数を記録
+# なにこれ？
+# 注意 > pd.read_csv
+#        読み込むcsvファイルはどこから？
+#        
+# 注意 > json_open
+#        読み込むjsonはcodeforces apiから手動で取得
+# 　　　　おそらくここから : https://codeforces.com/api/user.rating?handle=Fefer_Ivan       
+# 
+# やってること
+#       users_rate_change\ユーザ名_submissons.csv と
+#       rate_ユーザ名.json を統合し
+#       users_rate_change\ユーザ名_unique.csv に変換
+# 
+# データ形式を変更し別ファイルに保存（またはprint）
+# /contest/1394/problem/D と
+# {
+    # "contestId": 1392,
+    # "contestName": "Codeforces Global Round 10",
+    # "handle": "tourist",
+    # "rank": 4,
+    # "ratingUpdateTimeSeconds": 1597599300,
+    # "oldRating": 3515,
+    # "newRating": 3506
+# }, が
+# 1394,D,3506 に変換
+# 
+# 
+
 
 import pandas as pd
 import csv
 import json
 
 def userSubmissionUnique(userName):
+    # readするフォルダ名
     baseDir = 'users_rate_change/'
     target = baseDir + userName + '_submissons.csv'
     data = pd.read_csv(target, header=None)
