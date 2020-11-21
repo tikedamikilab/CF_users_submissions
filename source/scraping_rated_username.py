@@ -1,6 +1,13 @@
-# ユーザ名を取得する
-# https://codeforces.com/ratings/page/1
-# [['Um_nik', 109], ['tourist', 48]]
+# ユーザデータ取得の最初に使う
+# ユーザ名とそのユーザページからページ数を取得
+# 出力はprint out
+# 
+# https://codeforces.com/ratings/page/1 からランキング順にユーザ名を取得
+# https://codeforces.com/submissions/Um_nik から最大ページ数を取得
+#
+# 出力データ形式
+#     [['Um_nik', 109], ['tourist', 48]]
+# 
 
 import pandas as pd
 import urllib.request, urllib.error
@@ -29,12 +36,15 @@ def makeCSVRatedUserNameList():
     print(URL)
 
     data = pd.read_html(URL, header = 0)
-    print(data[5]['Who'][0])
+
+    # print(data[6])
+    print("*************")
+    print(data[6]['Who'][0])
 
     submissionBaseURL = 'https://codeforces.com/submissions/'
     outputList = []
 
-    for name in data[5]['Who']:
+    for name in data[6]['Who']:
         submissionURL = submissionBaseURL + name
         driver.get(submissionURL)
         sleep(1)
