@@ -1,6 +1,22 @@
 # scraping_user_submission
-# CFからあるユーザのsubmissionsを取得 -> csvへ
+# ユーザデータ取得に関するメイン部分
+#
+# CFから指定したユーザのsubmissionsを取得 -> csvへ
 # users_submissiomsに格納
+#
+# 注意 : csv追記
+# 注意 : フォルダは作成されない
+# 
+# 入力データ形式
+#      userList = [[ユーザ名, 最大ページ数], ['Um_nik', 109], ['tourist', 48]]
+#
+# 出力データ形式
+#      指定フォルダにユーザ名ごとのcsvファイルが作成される
+#      csvに以下の形式で追記される
+#            89966600,Aug/14/2020 21:38,Um_nik,E - Hexagons,GNU C++17 (64),Accepted,234 ms,0 KB
+#            89966282,Aug/14/2020 21:34,Um_nik,E - Decypher the String,GNU C++17 (64),Wrong answer on test 1,15 ms,100 KB
+#      
+
 
 import pandas as pd
 import urllib.request, urllib.error

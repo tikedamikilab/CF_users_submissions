@@ -1,10 +1,16 @@
 # ユーザが解いた問題のURLを全部集める
-# userName = ユーザのID
-# start=スクレイピングを始めるページの番号．通常１
-# end= スクレイピングの終わりのページ．その人個人のページからMAXのページ番号を取得
-# ユーザページ例
-# https://codeforces.com/submissions/tourist
+# 多分使わない？
+#       ここで使われる : source\rate_change.py
 # 
+# 入力データ
+#       userName = ユーザのID
+#       start=スクレイピングを始めるページの番号．通常１
+#       end= スクレイピングの終わりのページ．その人個人のページからMAXのページ番号を取得
+#       ユーザページ例 : https://codeforces.com/submissions/tourist
+# 
+# 出力データ
+#       /contest/615/problem/E
+#
 # 注意：フォルダは生成されない
 # 注意：csvは上書き
 

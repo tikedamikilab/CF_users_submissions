@@ -2,6 +2,7 @@
 # なにこれ？
 # 注意 > pd.read_csv
 #        読み込むcsvファイルはどこから？
+#        ここで作成 : source\scraping_URL_user_submissons_problem.py
 #        
 # 注意 > json_open
 #        読み込むjsonはcodeforces apiから手動で取得
