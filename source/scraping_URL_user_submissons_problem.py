@@ -1,4 +1,9 @@
 # ユーザが解いた問題のURLを全部集める
+# userName = ユーザのID
+# start=スクレイピングを始めるページの番号．通常１
+# end= スクレイピングの終わりのページ．その人個人のページからMAXのページ番号を取得
+# ユーザページ例
+# https://codeforces.com/submissions/tourist
 
 from time import sleep
 from bs4 import BeautifulSoup  # BeautifulSoupクラスをインポート
