@@ -2,6 +2,12 @@
 
 _2_users_submissionsにレート上位600人のsubmissionが入っている
 
+
+### ターゲットからsubmissionの最大ページ数を取得
+
+他のプログラムの入力データを生成
+source\scraping_target_to_maxsubmission.py
+
 ### ユーザのレート順にユーザ名とそのユーザページからページ数を取得
 
 source\scraping_rated_username.py
