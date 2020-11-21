@@ -1,3 +1,8 @@
+# 実行不能
+# 状況不明
+# おそらくcsvからcos類似度の結果を取得するはず
+# エラー内容 > AttributeError: 'Series' object has no attribute 'flatten'
+
 import pandas as pd
 import csv
 
