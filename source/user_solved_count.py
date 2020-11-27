@@ -13,7 +13,7 @@ import csv
 # userName = 'tourist'
 # start = 1
 # end = 48
-def userSolvedProblemCount():
+def user_solved_problem_count():
     
     baseDir = '_allusers_problem_submissions/'
 
@@ -25,16 +25,15 @@ def userSolvedProblemCount():
         print(fileName)
         target = baseDir + fileName
         data = pd.read_csv(target, header=None)
- 
+
         problemUnique = []
         for user in data[2]:
             if user not in userList:
                 userList.append(user)
                 solvedcount.append(1)
-            else:
-                if user not in problemUnique:
-                    problemUnique.append(user)
-                    solvedcount[userList.index(user)] += 1
+            elif user not in problemUnique:
+                problemUnique.append(user)
+                solvedcount[userList.index(user)] += 1
 
     
     with open('./users_analytics/userSolvedCount.csv', 'a', newline='') as f:
@@ -48,4 +47,4 @@ def userSolvedProblemCount():
                 print('catch KeyError:', e)
 
 if __name__ == "__main__":
-        userSolvedProblemCount()
+        user_solved_problem_count()

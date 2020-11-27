@@ -15,6 +15,7 @@ import csv
 # userName = 'tourist'
 # start = 1
 # end = 48
+
 def userSubmissionsAnalytics(userName):
     
     baseDir = 'users_submissions/'
