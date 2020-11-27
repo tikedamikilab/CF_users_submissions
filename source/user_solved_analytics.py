@@ -3,6 +3,7 @@
 # 初期の分析において使用
 #
 # 入力データ
+#       userName = 'tourist'
 #       users : source\scraping_rated_username.pyで作成（source\scraping_user_submission.pyにコメントアウトで残ってる）
 #       target csv : source\scraping_user_submission.py で作成
 # 出力データ
@@ -12,11 +13,7 @@
 import pandas as pd
 import csv
 
-# userName = 'tourist'
-# start = 1
-# end = 48
-
-def userSubmissionsAnalytics(userName):
+def user_submissions_analytics(userName):
     
     baseDir = 'users_submissions/'
     target = baseDir + userName + '.csv'
@@ -44,4 +41,4 @@ if __name__ == "__main__":
         
     ]
     for user in users:
-        userSubmissionsAnalytics(user[0])
+        user_submissions_analytics(user[0])

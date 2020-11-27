@@ -10,9 +10,6 @@
 import pandas as pd
 import csv
 
-# userName = 'tourist'
-# start = 1
-# end = 48
 def user_solved_problem_count():
     
     baseDir = '_allusers_problem_submissions/'
