@@ -44,7 +44,7 @@ def print_target_maxpage(name, targetURL):
     try:
         output =[name, int(submissionMAX)]
         print(output, end="")
-        print(",", end="")
+        print(",", end="", flush=True)
     except ValueError as e:
         print('catch KeyError:', e)
     
