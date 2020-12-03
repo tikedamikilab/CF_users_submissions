@@ -34,7 +34,7 @@ options.add_argument("--start-maximized")
 options.add_argument('--headless')
 driver = webdriver.Chrome('C:\Program Files\Chrome Driver\chromedriver',options=options)
 
-def printTargetMAXPage(name, targetURL):
+def print_target_maxpage(name, targetURL):
     driver.get(targetURL)
     sleep(1)
     soup = BeautifulSoup(driver.page_source, features="html.parser")
@@ -43,7 +43,8 @@ def printTargetMAXPage(name, targetURL):
     
     try:
         output =[name, int(submissionMAX)]
-        print(output)
+        print(output, end="")
+        print(",", end="")
     except ValueError as e:
         print('catch KeyError:', e)
     
@@ -53,4 +54,4 @@ if __name__ == "__main__":
         BaseURL = "https://codeforces.com/problemset/status/"
         targetURL = BaseURL + str(problemID) + "/problem/" + 'A'
         
-        printTargetMAXPage(problemID, targetURL)
+        print_target_maxpage(problemID, targetURL)
