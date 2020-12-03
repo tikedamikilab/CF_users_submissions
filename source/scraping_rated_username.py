@@ -29,7 +29,7 @@ options.add_argument("--start-maximized")
 options.add_argument('--headless')
 driver = webdriver.Chrome('C:\Program Files\Chrome Driver\chromedriver',options=options)
 
-def makeCSVRatedUserNameList():
+def makecsv_rated_usernamelist():
     page = 1
     baseURL = 'https://codeforces.com/ratings/page/'
     URL = baseURL + str(page)
@@ -60,4 +60,4 @@ def makeCSVRatedUserNameList():
     print(outputList)
 
 if __name__ == "__main__":
-    makeCSVRatedUserNameList()
+    makecsv_rated_usernamelist()
