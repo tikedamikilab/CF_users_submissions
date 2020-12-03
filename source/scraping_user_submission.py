@@ -21,10 +21,7 @@
 import pandas as pd
 import urllib.request, urllib.error
 
-# userName = 'tourist'
-# start = 1
-# end = 48
-def makeCSVUserSubmissions(userName, start, end):
+def make_csv_user_submissions(userName, start, end):
     
     baseURL = 'https://codeforces.com/submissions/'
     
@@ -45,7 +42,7 @@ if __name__ == "__main__":
         ['SerVasilich', 29]
     ]
     for user in userList:
-        makeCSVUserSubmissions(user[0], 1, user[1])
+        make_csv_user_submissions(user[0], 1, user[1])
 
 
 # ['Um_nik', 109], ['tourist', 48], ['ecnerwala', 84], ['Benq', 115], ['boboniu', 3],
