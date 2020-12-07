@@ -9,7 +9,7 @@ if __name__ == "__main__":
 
     # print(data[data['count'] == 11])
 
-    for index, data in data[data['count'] == 9].iterrows():
+    for index, data in data[data['count'] == 8].iterrows():
         user = data['username']
         BaseURL = "https://codeforces.com/submissions/"
         targetURL = BaseURL + str(user)

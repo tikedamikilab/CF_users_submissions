@@ -33,10 +33,7 @@ options.add_argument("--start-maximized")
 options.add_argument('--headless')
 driver = webdriver.Chrome('C:\Program Files\Chrome Driver\chromedriver',options=options)
 
-# userName = 'tourist'
-# start = 1
-# end = 48
-def makeCSVSubmissonsProblemURL(userName, start, end):
+def make_csv_submissons_url(userName, start, end):
     baseURL = 'https://codeforces.com/submissions/'    
 
     for i in range(start , end + 1):
@@ -48,8 +45,16 @@ def makeCSVSubmissonsProblemURL(userName, start, end):
         soup = BeautifulSoup(driver.page_source, features="html.parser")
         
         ProblemURL =[n.get('href') for n in soup.select('tbody td[data-problemid] a[href]')]
-        
-        pd.DataFrame(ProblemURL).to_csv('./users_submissions/' + userName + '_submissons.csv', mode='a',index=None, header=None)
+        submissions_result = [n.get_text() for n in soup.select('tbody td [class="submissionVerdictWrapper"]')]
+        output = []
+        for i in range(len(ProblemURL)):
+            o = [ProblemURL[i], submissions_result[i]]
+            output.append(o)
+        pd.DataFrame(output).to_csv('./users_submissionURL/' + userName + '.csv', mode='a',index=None, header=None)
 
 if __name__ == "__main__":
-    makeCSVSubmissonsProblemURL('tourist', 1, 48)
+
+    userList = [
+        
+    ]
+    make_csv_submissons_url('tourist', 1, 1)
