@@ -33,7 +33,7 @@ import pandas as pd
 import csv
 import json
 
-def userSubmissionUnique(userName):
+def user_rate_change(userName):
     # readするフォルダ名
     baseDir = 'users_rate_change/'
     target = baseDir + userName + '_submissons.csv'
@@ -64,4 +64,4 @@ def userSubmissionUnique(userName):
             # writer.writerow([solved.split('/')[2], solved.split('/')[4], rate_change['result'][maxlen]['newRating']])
     print(output[::-1])
 if __name__ == "__main__":
-    userSubmissionUnique('BinZhao')
+    user_rate_change('BinZhao')
