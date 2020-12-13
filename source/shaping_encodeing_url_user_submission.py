@@ -30,8 +30,8 @@ def shaping_url_user_submission(userName, filename):
 
         if contestID == '3' or contestID == '7' or contestID == '13' or contestID == '17' or contestID == '37' or contestID == '43' or contestID == '53' or contestID == '56' or contestID == '74' or contestID == '88' or contestID == '90':
             if contestABCDEF == 'A':
-                output = (contestID + contestABCDEF + encodeing_result(result)) + ' ' + output
-                output.append(contestID + encoding_abcdef(contestABCDEF) + encodeing_result(result))
+                # output = (encodeing_result(result) + contestABCDEF + contestID) + ' ' + output
+                output.append(encodeing_result(result) + encoding_abcdef(contestABCDEF) + contestID)
 
     with open('./shaping_encoding_URL/' + filename + '.csv', 'a', newline='') as f:
         writer = csv.writer(f)
