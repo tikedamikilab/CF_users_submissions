@@ -1,3 +1,6 @@
+## 対象の問題を指定回数以上解答しているユーザの名前とmaxsubmissionを取得
+
+
 import scraping_target_to_maxsubmission     
 import pandas as pd                    
 

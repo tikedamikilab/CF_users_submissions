@@ -1,4 +1,4 @@
-# source\scraping_user_solved_list.py
+# source\user_next_order_solved.py
 # 特定の問題の次，どの問題を解答しどの結果だったかを記録
 # RNNの予測との比較において使用
 #
@@ -43,7 +43,7 @@ def encoding_problemid2index(problemid):
 
 if __name__ == "__main__":
     baseDir = 'shaping_encoding_URL/'
-    
+
     target = baseDir + '8-10mon_2' + '.csv'
 
     user_next_order_solved(target)
