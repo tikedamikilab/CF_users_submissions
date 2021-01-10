@@ -1,5 +1,5 @@
-## 対象の問題を指定回数以上解答しているユーザの名前とmaxsubmissionを取得
-
+# 対象の問題を指定回数以上解答しているユーザの名前とmaxsubmissionを取得
+# printされる
 
 import scraping_target_to_maxsubmission     
 import pandas as pd                    
@@ -12,7 +12,7 @@ if __name__ == "__main__":
 
     # print(data[data['count'] == 11])
 
-    for index, data in data[data['count'] == 8].iterrows():
+    for index, data in data[data['count'] == 7].iterrows():
         user = data['username']
         BaseURL = "https://codeforces.com/submissions/"
         targetURL = BaseURL + str(user)
